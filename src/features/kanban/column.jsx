@@ -3,30 +3,19 @@ import TaskCard from "./TaskCard";
 
 const Column = ({ title, tasks, onMove, onDelete, moveLabel, isDone }) => {
   return (
-    <div
-      style={{
-        flex: 1,
-        padding: "20px",
-        border: "1px solid #f9f9f9",
-        borderRadius: "8px",
-        backgroundColor: "#f9f9f9",
-      }}
-    >
-      {" "}
+    <div className="flex-1 p-4 border rounded-lg bg-gray-100 flex flex-col gap-4">
       <h2
+        className="text-lg font-medium p-2.5 rounded-lg border "
         style={{
-          padding: "10px",
-          border: "1px solid #ccc",
           borderColor: isDone ? "#5AE881" : "#7A4ED9",
-          borderRadius: "16px",
           background: isDone ? "#5AE88133" : "#7A4ED933",
           color: isDone ? "#5AE881" : "#7A4ED9",
         }}
       >
         {title}
-      </h2>{" "}
+      </h2>
       {tasks.length === 0 ? (
-        <p style={{ color: "#888" }}>No tasks</p>
+        <p className="text-[#888]">No tasks</p>
       ) : (
         tasks.map((task) => (
           <TaskCard

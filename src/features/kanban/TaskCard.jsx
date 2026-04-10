@@ -2,45 +2,22 @@ import React from "react";
 
 const TaskCard = ({ task, onMove, onDelete, moveLabel, isDone }) => {
   return (
-    <div
-      style={{
-        padding: "10px",
-        marginBottom: "10px",
-        border: "1px solid #ccc",
-        borderColor: "white",
-        borderRadius: "16px",
-        background: "white",
-        boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-      }}
-    >
-      {" "}
-      <p>{task.title}</p>{" "}
-      <button
-        onClick={() => onMove(task.id)}
-        style={{
-          padding: "4px 8px",
-          border: "1px solid #0E900F",
-          borderRadius: "4px",
-          backgroundColor: "#0E900F44",
-          color: "#0E900F",
-        }}
-      >
-        {moveLabel}
-      </button>{" "}
-      <button
-        onClick={() => onDelete(task.id)}
-        style={{
-          padding: "4px 8px",
-          marginLeft: "10px",
-          border: "1px solid #ED584E77",
-          borderRadius: "4px",
-          backgroundColor: "#ED584E77",
-          color: "red",
-        }}
-      >
-        {" "}
-        Delete{" "}
-      </button>{" "}
+    <div className="flex flex-col gap-2 p-2.5 border border-white rounded-lg bg-white shadow-sm">
+      <p>{task.title}</p>
+      <div className="flex gap-2">
+        <button
+          onClick={() => onMove(task.id)}
+          className="text-sm px-2 py-1 rounded text-[#0E900F] bg-[#0E900F44] border-[#0E900F]"
+        >
+          {moveLabel}
+        </button>
+        <button
+          onClick={() => onDelete(task.id)}
+          className="text-sm px-2 py-1 rounded text-red-500 bg-red-100 border-red-300"
+        >
+          Delete
+        </button>
+      </div>
     </div>
   );
 };

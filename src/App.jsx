@@ -19,14 +19,14 @@ function App() {
   };
 
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial" }}>
+    <div className="p-4 flex flex-col gap-6">
       <KanbanHeader title={title} setTitle={setTitle} onAdd={handleAdd} />
 
       {/* Columns */}
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <div style={styles.columns}>
+        <div className="flex flex-col md:flex-row gap-10">
           <Column
             title="To Do"
             tasks={todoTasks}
@@ -50,10 +50,3 @@ function App() {
 }
 
 export default App;
-
-const styles = {
-  columns: {
-    display: "flex",
-    gap: "40px",
-  },
-};
