@@ -7,9 +7,10 @@ const TaskCard = ({ task, onMove, onDelete, moveLabel, isDone }) => {
         padding: "10px",
         marginBottom: "10px",
         border: "1px solid #ccc",
-        borderColor: isDone ? "#5AE881" : "#7A4ED9",
+        borderColor: "white",
         borderRadius: "16px",
-        background: isDone ? "#5AE88133" : "#7A4ED933",
+        background: "white",
+        boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
       }}
     >
       {" "}
